@@ -15,6 +15,10 @@ int Character::defend() const {
     return 0;
 }
 
+string Character::get_name() const {
+    return m_name;
+}
+
 void Character::degat(int degat) {
     m_pv -= degat;
     if (m_pv < 0) {
@@ -22,12 +26,20 @@ void Character::degat(int degat) {
     }
 }
 
-bool Character::isAlive() const {
+bool Character::isAlive() {
     return m_pv > 0;
 }
 
 int Character::get_pv() {
     return m_pv;
+}
+
+int Character::get_attaque() {
+    return m_attaque;
+}
+
+int Character::get_defense() {
+    return m_defense;
 }
 
 void Character::affichageStatus() const {

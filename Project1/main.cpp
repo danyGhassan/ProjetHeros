@@ -44,6 +44,7 @@ int main() {
         cin >> choixHeros;
         if (choixHeros == "Goku") {
            hero = new Hero("Goku", 100, 50,20,5);
+           vilain = new Vilain("BlackGoku", 100, 50, 25, 10);
         }
     }
     if (info == 2) {
@@ -52,11 +53,13 @@ int main() {
         cin >> choixVilain;
         if (choixVilain == "BlackGoku") {
             vilain = new Vilain("BlackGoku", 100, 50,25,10);
+            hero = new Hero("Goku", 100, 50, 20, 5);
         }
     }
-    while (hero->get_pv() > 0 && vilain->get_pv() > 0) {
+    //while (hero->get_pv() > 0 && vilain->get_pv() > 0) {
+    while ((hero->get_pv() > 0) && (vilain->get_pv() > 0)) {
         string action;
-        cout << hero << " Voulez vous attaquer ou defendre ? " << endl;
+        cout << hero->get_name() << " Voulez vous attaquer ou defendre ? " << endl;
         cin >> action;
         if (action == "defendre") {
             liste_defense_hero();
@@ -67,7 +70,11 @@ int main() {
             liste_attaque_vilain();
             string att;
             cin >> att;
-            hero->degat(15);
+            if (hero) {
+                hero->degat(vilain->get_attaque());
+                cout << hero->get_name() << " PV: " << hero->get_pv() << endl;
+            }
+            cout << hero->get_pv();
         }
     }
 

@@ -20,9 +20,12 @@ public:
     void attack(Character& ennemi, int valeurAtack); //virtual
     int defend() const; //virtual
     void degat(int degat);
-    bool isAlive() const;
+    bool isAlive();
     void affichageStatus() const;
     int get_pv();
+    int get_attaque();
+    int get_defense();
+    string get_name() const ;
 };
 
 class Hero : public Character {
