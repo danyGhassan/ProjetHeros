@@ -56,36 +56,40 @@ int main() {
             hero = new Hero("Goku", 100, 50, 20, 5);
         }
     }
-    //while (hero->get_pv() > 0 && vilain->get_pv() > 0) {
     while ((hero->get_pv() > 0) && (vilain->get_pv() > 0)) {
         string attaque;
-        cout << hero->get_name() << "choisissez une attaque : " <<endl << liste_attaque_hero() << endl;
+        cout << hero->get_name() << " choisissez une attaque : " << endl ;
+        liste_attaque_hero();
+        cout << endl;
+        cin >> attaque;
+        string defense;
+        cout << vilain->get_name() << " choisissez une defense : " << endl;
+        liste_defense_vilain();
+        cin >> defense;
         if (attaque == "kamehameha") {
+            hero->attack(*vilain,vilain->get_defense());
+            cout << vilain->get_name() << " : " << vilain->get_pv() << "PV ." << endl;
+        }
 
+        string atta;
+        cout << vilain->get_name() << " choisissez une attaque : " << endl;
+        liste_attaque_vilain();
+        cout << endl;
+        cin >> atta;
+        string def;
+        cout << hero->get_name() << " choisissez une defense : " << endl;
+        liste_defense_hero();
+        cin >> defense;
+        if (attaque == "kamehameha") {
+            vilain->attack(*hero, hero->get_defense());
+            cout << hero->get_name() << " : " << hero->get_pv() << "PV ." << endl;
         }
-        /*string action;
-        cout << hero->get_name() << " Voulez vous attaquer ou defendre ? " << endl;
-        cin >> action;
-        if (action == "defendre") {
-            liste_defense_hero();
-            string def;
-            cin >> def;
-        }
-        else {
-            liste_attaque_hero();
-            string atta;
-            cin atta;
-        }
-        if (action == "attaque") {
-            liste_attaque_vilain();
-            string att;
-            cin >> att;
-            if (hero) {
-                hero->degat(vilain->get_attaque());
-                cout << hero->get_name() << " PV: " << hero->get_pv() << endl;
-            }
-            cout << hero->get_pv();
-        }*/
+    }
+    if (vilain->get_pv() > 0) {
+        cout << vilain->get_name() << " vient de gagner le combat et " << hero->get_name() << " a perdu " << endl;
+    }
+    if (hero->get_pv() > 0) {
+        cout << hero->get_name() << " vient de gagner le combat et " << vilain->get_name() << " a perdu " << endl;
     }
 
 

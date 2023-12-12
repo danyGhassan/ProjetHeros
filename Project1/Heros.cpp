@@ -34,15 +34,15 @@ int Character::get_pv() {
     return m_pv;
 }
 
-int Character::get_attaque() {
+int Character::get_attaque() const {
     return m_attaque;
 }
 
-int Character::get_defense() {
+int Character::get_defense() const {
     return m_defense;
 }
 
-void Character::affichageStatus() const {
+void Character::affichageStatus() {
     std::cout << m_name << " - PV: " << m_pv << " Energy: " << m_energy << std::endl;
 }
 

@@ -19,12 +19,12 @@ public:
     ~Character();
     void attack(Character& ennemi, int valeurAtack); //virtual
     int defend() const; //virtual
-    void degat(int degat);
+    void degat(int degat) ;
     bool isAlive();
-    void affichageStatus() const;
+    void affichageStatus();
     int get_pv();
-    int get_attaque();
-    int get_defense();
+    int get_attaque() const ;
+    int get_defense() const ;
     string get_name() const ;
 };
 
