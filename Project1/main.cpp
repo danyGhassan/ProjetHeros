@@ -66,6 +66,11 @@ int main() {
             string def;
             cin >> def;
         }
+        else {
+            liste_attaque_hero();
+            string atta;
+            cin atta;
+        }
         if (action == "attaque") {
             liste_attaque_vilain();
             string att;
