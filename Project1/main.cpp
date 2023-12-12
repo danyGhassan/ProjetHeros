@@ -71,7 +71,9 @@ int main() {
         cin >> defense;
         if (attaque == "kamehameha") {
             hero->attack(*vilain,vilain->get_defense());
-            cout << vilain->get_name() << " : " << vilain->get_pv() << "PV ." << endl;
+            hero->perte_energie();
+            cout << vilain->get_name() << " : " << vilain->get_pv() << "PV ." << " --> " << "energie : " << vilain->get_energie() << endl;
+            cout << hero->get_name() << " : " << hero->get_pv() << "PV ." << " --> " << "energie : " << hero->get_energie() << endl;
         }
 
         string atta;
@@ -86,7 +88,9 @@ int main() {
         cin >> defense;
         if (attaque == "kamehameha") {
             vilain->attack(*hero, hero->get_defense());
-            cout << hero->get_name() << " : " << hero->get_pv() << "PV ." << endl;
+            vilain->perte_energie();
+            cout << hero->get_name() << " : " << hero->get_pv() << "PV ." << " --> " << "energie : " << hero->get_energie() << endl;
+            cout << vilain->get_name() << " : " << vilain->get_pv() << "PV ." << " --> " << "energie : " << vilain->get_energie() << endl;
         }
     }
     if (vilain->get_pv() > 0) {

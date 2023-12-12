@@ -42,6 +42,14 @@ int Character::get_defense() const {
     return m_defense;
 }
 
+void Character::perte_energie() {
+    m_energy -= 5;
+}
+
+int Character::get_energie() {
+    return m_energy;
+}
+
 //void Character::affichageStatus() {
 //    std::cout << m_name << " - PV: " << m_pv << " Energy: " << m_energy << std::endl;
 //}

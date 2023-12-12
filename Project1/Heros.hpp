@@ -26,6 +26,8 @@ public:
     int get_attaque() const ;
     int get_defense() const ;
     string get_name() const ;
+    void perte_energie();
+    int get_energie();
 };
 
 class Hero : public Character {
