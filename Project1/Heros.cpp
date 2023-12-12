@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-Character::Character(const string& nom, int PV, int energie) : m_name(nom), m_pv(PV), m_energy(energie) {}
+Character::Character(const string& nom, int PV, int energie,int attaque,int defense) : m_name(nom), m_pv(PV), m_energy(energie), m_attaque(attaque), m_defense(defense) {}
 
 Character::~Character() {}
 
@@ -26,15 +26,19 @@ bool Character::isAlive() const {
     return m_pv > 0;
 }
 
+int Character::get_pv() {
+    return m_pv;
+}
+
 void Character::affichageStatus() const {
     std::cout << m_name << " - PV: " << m_pv << " Energy: " << m_energy << std::endl;
 }
 
-Hero::Hero(const string& nom, int PV, int energie) : Character(nom, PV, energie) {}
+Hero::Hero(const string& nom, int PV, int energie,int attaque,int defense) : Character(nom, PV, energie, attaque, defense) {}
 
 Hero::~Hero() {}
 
-Villain::Villain(const string& nom, int PV, int energie) : Character(nom, PV, energie) {}
+Vilain::Vilain(const string& nom, int PV, int energie,int attaque, int defense) : Character(nom, PV, energie,attaque,defense) {}
 
-Villain::~Villain() {}
+Vilain::~Vilain() {}
 
