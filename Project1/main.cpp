@@ -58,7 +58,12 @@ int main() {
     }
     //while (hero->get_pv() > 0 && vilain->get_pv() > 0) {
     while ((hero->get_pv() > 0) && (vilain->get_pv() > 0)) {
-        string action;
+        string attaque;
+        cout << hero->get_name() << "choisissez une attaque : " <<endl << liste_attaque_hero() << endl;
+        if (attaque == "kamehameha") {
+
+        }
+        /*string action;
         cout << hero->get_name() << " Voulez vous attaquer ou defendre ? " << endl;
         cin >> action;
         if (action == "defendre") {
@@ -80,7 +85,7 @@ int main() {
                 cout << hero->get_name() << " PV: " << hero->get_pv() << endl;
             }
             cout << hero->get_pv();
-        }
+        }*/
     }
 
 
