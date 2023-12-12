@@ -1,7 +1,7 @@
 #include "heros.hpp"
 
 void liste_vilains() {
-    cout << endl << "BlackGoku" << endl;
+    cout << endl << "BlackGoku";
 }
 
 void liste_heros() {
@@ -9,11 +9,11 @@ void liste_heros() {
 }
 
 void liste_defense_hero() {
-    cout << endl << "protection" << endl;
+    cout << endl << "protection" ;
 }
 
 void liste_defense_vilain() {
-    cout << endl << "protection" << endl;
+    cout << endl << "protection";
 }
 
 void liste_attaque_hero() {
@@ -45,6 +45,7 @@ int main() {
         if (choixHeros == "Goku") {
            hero = new Hero("Goku", 100, 50,20,5);
            vilain = new Vilain("BlackGoku", 100, 50, 25, 10);
+           cout << endl << nom2 << " vous serai Black Goku" << endl;
         }
     }
     if (info == 2) {
@@ -54,17 +55,19 @@ int main() {
         if (choixVilain == "BlackGoku") {
             vilain = new Vilain("BlackGoku", 100, 50,25,10);
             hero = new Hero("Goku", 100, 50, 20, 5);
+            cout << endl << nom2 << " vous serai Goku " << endl;
         }
     }
     while ((hero->get_pv() > 0) && (vilain->get_pv() > 0)) {
         string attaque;
-        cout << hero->get_name() << " choisissez une attaque : " << endl ;
+        cout << hero->get_name() << " choisissez une attaque pari ces attaques : " << endl ;
         liste_attaque_hero();
-        cout << endl;
+        cout << " : ";
         cin >> attaque;
         string defense;
         cout << vilain->get_name() << " choisissez une defense : " << endl;
         liste_defense_vilain();
+        cout << " : ";
         cin >> defense;
         if (attaque == "kamehameha") {
             hero->attack(*vilain,vilain->get_defense());
@@ -74,11 +77,12 @@ int main() {
         string atta;
         cout << vilain->get_name() << " choisissez une attaque : " << endl;
         liste_attaque_vilain();
-        cout << endl;
+        cout << " : ";
         cin >> atta;
         string def;
         cout << hero->get_name() << " choisissez une defense : " << endl;
         liste_defense_hero();
+        cout << " : ";
         cin >> defense;
         if (attaque == "kamehameha") {
             vilain->attack(*hero, hero->get_defense());

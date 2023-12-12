@@ -26,9 +26,9 @@ void Character::degat(int degat) {
     }
 }
 
-bool Character::isAlive() {
-    return m_pv > 0;
-}
+//bool Character::enVie() {
+//    return m_pv > 0;
+//}
 
 int Character::get_pv() {
     return m_pv;
@@ -42,9 +42,9 @@ int Character::get_defense() const {
     return m_defense;
 }
 
-void Character::affichageStatus() {
-    std::cout << m_name << " - PV: " << m_pv << " Energy: " << m_energy << std::endl;
-}
+//void Character::affichageStatus() {
+//    std::cout << m_name << " - PV: " << m_pv << " Energy: " << m_energy << std::endl;
+//}
 
 Hero::Hero(const string& nom, int PV, int energie,int attaque,int defense) : Character(nom, PV, energie, attaque, defense) {}
 

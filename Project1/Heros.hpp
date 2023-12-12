@@ -20,8 +20,8 @@ public:
     void attack(Character& ennemi, int valeurAtack); //virtual
     int defend() const; //virtual
     void degat(int degat) ;
-    bool isAlive();
-    void affichageStatus();
+    //bool enVie();
+    //void affichageStatus();
     int get_pv();
     int get_attaque() const ;
     int get_defense() const ;
