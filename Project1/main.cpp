@@ -9,11 +9,11 @@ void liste_heros() {
 }
 
 void liste_defense_hero() {
-    cout << endl << "genkidama" << endl;
+    cout << endl << "protection" << endl;
 }
 
 void liste_defense_vilain() {
-    cout << endl << "attaqueDuSanglier" << endl;
+    cout << endl << "protection" << endl;
 }
 
 void liste_attaque_hero() {
